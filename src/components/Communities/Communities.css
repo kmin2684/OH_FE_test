@@ -1,9 +1,3 @@
-.Container .MuiContainer-root {
+.Communities {
   margin: 2rem 0 0 0;
-}
-
-.Container .MuiGrid-item {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
 }

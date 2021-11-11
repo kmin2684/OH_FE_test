@@ -4,14 +4,12 @@ import Community from '../Community/Community';
 import ErrorDisplay from '../ErrorDisplay/ErrorDisplay';
 import Spinner from '../Spinner/Spinner'; 
 import { useGetCommunitiesQuery,useGetHomesQuery } from '../../store/mainApi';
-import {useTypedSelector, useAppDispatch} from "../../store/index";
+import {useTypedSelector} from "../../store/index";
 import {GetAveragePrice, SortByName} from "../../utils/organize_data";
 import {community} from '../../data_types/data_types';
 
 
 export default function Communities() {
-    const data = useTypedSelector(state => state.data.dataOrganized);
-    const dispatch = useAppDispatch();
     const communitiesFetch = useGetCommunitiesQuery('');
     const homesFetch = useGetHomesQuery('');
     const searchKey = useTypedSelector(state => state.data.searchKey);

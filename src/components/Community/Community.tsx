@@ -1,4 +1,7 @@
 import * as React from 'react';
+import { useAppDispatch } from '../../store';
+import { dataActions } from '../../store/dataSlice';
+
 import "./Community.css";
 import FALLBACK_IMAGE from '../../assets/No_image_available.svg';
 import Card from '@mui/material/Card';
@@ -11,15 +14,18 @@ import { Skeleton, Grid } from '@mui/material';
 import {community} from '../../data_types/data_types'
 
 interface propType {
-  community: {avgPrice: string, imgUrl: string, name: string}, 
+  community: {avgPrice: string, imgUrl: string, name: string, id: string}, 
 };
 
 export default function Community(props: propType) {
+
+  const dispatch = useAppDispatch(); 
 
   const [image, setImage] = React.useState({loading: true})
   const avgPrice = props.community.avgPrice;
   const imgUrl = props.community.imgUrl;
   const name = props.community.name;
+  const communityId = props.community.id; 
 
 
   const onMediaFallback = (event: React.SyntheticEvent<HTMLImageElement, Event>) => {
@@ -27,6 +33,8 @@ export default function Community(props: propType) {
     event.currentTarget.style.objectFit = 'contain';
   };
   const onLoad = () => setImage(state => {return {...state, loading: false}});
+  const onClick = () => dispatch(dataActions.replaceHomesModal({display: true, communityId}));
+
 
   return (
     <Grid item xs={12} sm={6} md={4} lg={3} >
@@ -53,7 +61,9 @@ export default function Community(props: propType) {
             </Typography>
           </CardContent>
             <CardActions>
-              <Button disabled = {avgPrice === 'no homes for sale'} size="small">view homes</Button>
+              <Button disabled = {avgPrice === 'no homes for sale'} size="small" onClick={onClick}>
+                view homes
+              </Button>
             </CardActions>
         </Card>
     </div>

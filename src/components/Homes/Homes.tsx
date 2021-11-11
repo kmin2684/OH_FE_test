@@ -1,4 +1,5 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useTypedSelector, useAppDispatch } from "../../store";
+import { dataActions } from "../../store/dataSlice";
 
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -13,15 +14,18 @@ import Typography from '@mui/material/Typography';
 
 
 export default function Homes() {
-    // const members = useSelector(state => state.status.chatHistory?.members);
 
-    // const classes = useStyles(); 
+    const state = useTypedSelector(state => state.data.homesModal);
+    const dispatch = useAppDispatch();
 
+    function onClose() {
+        dispatch(dataActions.replaceHomesModal({display: false, communityId: ''}));
+    }
 
     return ( <>    
     <Dialog
-        open={true}
-        // onClose={() => prop.setModalOpenProp(false)}
+        open={state.display}
+        onClose={onClose}
         // container={() => document.querySelector('.chat-window')}
         // style={{position: 'absolute'}}
         // BackdropProps={{ style: { position: 'absolute' } }}
@@ -42,46 +46,9 @@ export default function Homes() {
         <div style={{fontSize: '25px', margin: '1rem'}}>members</div>
 
             <Grid container columns={{ xs: 12, sm: 12, md: 12, lg:12 }} justifyContent="flex-start">
-                <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <Card style={{width: '100%', margin: '0.5rem'}}>
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                Home 1
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                type: house
-                            </Typography>
-                        </CardContent>
-                    </Card>
-                </Grid> 
-                <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <Card style={{width: '100%', margin: '1rem'}}>
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                Home 1
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                type: house
-                            </Typography>
-                        </CardContent>
-                    </Card>
-                </Grid> 
-
-                <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <Card style={{width: '100%', margin: '1rem'}}>
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                Home 1
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                type: house
-                            </Typography>
-                        </CardContent>
-                    </Card>
-                </Grid> 
                 
                 <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <Card style={{width: '100%', margin: '1rem'}}>
+                    <Card style={{margin: '0.5rem'}}>
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 Home 1
@@ -92,9 +59,8 @@ export default function Homes() {
                         </CardContent>
                     </Card>
                 </Grid> 
-                
                 <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <Card style={{width: '100%', margin: '1rem'}}>
+                    <Card style={{margin: '0.5rem'}}>
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 Home 1
@@ -105,9 +71,8 @@ export default function Homes() {
                         </CardContent>
                     </Card>
                 </Grid> 
-                
                 <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <Card style={{width: '100%', margin: '1rem'}}>
+                    <Card style={{margin: '0.5rem'}}>
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 Home 1
@@ -118,9 +83,8 @@ export default function Homes() {
                         </CardContent>
                     </Card>
                 </Grid> 
-                
                 <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <Card style={{width: '100%', margin: '1rem'}}>
+                    <Card style={{margin: '0.5rem'}}>
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 Home 1
@@ -131,9 +95,8 @@ export default function Homes() {
                         </CardContent>
                     </Card>
                 </Grid> 
-                
                 <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <Card style={{width: '100%', margin: '1rem'}}>
+                    <Card style={{margin: '0.5rem'}}>
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 Home 1
@@ -144,7 +107,54 @@ export default function Homes() {
                         </CardContent>
                     </Card>
                 </Grid> 
-
+                <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <Card style={{margin: '0.5rem'}}>
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                Home 1
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                type: house
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid> 
+                <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <Card style={{margin: '0.5rem'}}>
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                Home 1
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                type: house
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid> 
+                <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <Card style={{margin: '0.5rem'}}>
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                Home 1
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                type: house
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid> 
+                <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <Card style={{margin: '0.5rem'}}>
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                Home 1
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                type: house
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid> 
             </Grid>
     </Dialog>
     </>

@@ -17,7 +17,7 @@ import Typography from '@mui/material/Typography';
 export default function Home() {
     return (
     <Grid item xs={12} sm={6} md={4} lg={3}>
-        <Card style={{width: '100%', margin: '0.5rem'}}>
+        <Card style={{margin: '0.5rem'}}>
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                     Home 1
@@ -27,7 +27,7 @@ export default function Home() {
                 </Typography>
             </CardContent>
         </Card>
-    </Grid>
+    </Grid> 
     )
 }
 

@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface dataOrganizedState {
+export interface dataOrganizedType {
     name: string
     imgUrl: string
     avgPrice: string
 }
 
-export interface homesModalState {
+export interface homesModalType {
   display: boolean,
-  id:string
+  communityId:string
 }
 
-const initialState: {dataOrganized: dataOrganizedState[], searchKey: string, homesModal: homesModalState} = {
+const initialState: {dataOrganized: dataOrganizedType[], searchKey: string, homesModal: homesModalType} = {
   dataOrganized: [], 
   searchKey: '',
-  homesModal: {display: false, id: ''},
+  homesModal: {display: false, communityId: ''},
 };
 
 
@@ -22,13 +22,13 @@ const dataSlice = createSlice({
   name: "data",
   initialState,
   reducers: {
-    replaceDataOrganized(state, action: {payload: dataOrganizedState[], type: string}) {
+    replaceDataOrganized(state, action: {payload: dataOrganizedType[], type: string}) {
       state.dataOrganized = action.payload;
     },
     replaceSearchKey(state, action: {payload: string, type: string}) {
       state.searchKey = action.payload.trim()
     },
-    replaceHomesModal(state, action: {payload: homesModalState, type: string}) {
+    replaceHomesModal(state, action: {payload: homesModalType, type: string}) {
       state.homesModal = action.payload
     }
   

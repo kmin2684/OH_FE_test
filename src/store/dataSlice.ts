@@ -7,14 +7,15 @@ export interface dataOrganizedType {
 }
 
 export interface homesModalType {
-  display: boolean,
+  display: boolean
   communityId:string
+  communityName: string
 }
 
 const initialState: {dataOrganized: dataOrganizedType[], searchKey: string, homesModal: homesModalType} = {
   dataOrganized: [], 
   searchKey: '',
-  homesModal: {display: false, communityId: ''},
+  homesModal: {display: false, communityId: '', communityName: ''},
 };
 
 

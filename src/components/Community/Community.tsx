@@ -33,7 +33,7 @@ export default function Community(props: propType) {
     event.currentTarget.style.objectFit = 'contain';
   };
   const onLoad = () => setImage(state => {return {...state, loading: false}});
-  const onClick = () => dispatch(dataActions.replaceHomesModal({display: true, communityId}));
+  const onClick = () => dispatch(dataActions.replaceHomesModal({display: true, communityName: name, communityId}));
 
 
   return (

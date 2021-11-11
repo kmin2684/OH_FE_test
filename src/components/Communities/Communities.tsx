@@ -29,13 +29,13 @@ export default function Communities() {
 
                 <Grid container columns={{ xs: 12, sm: 12, md: 12, lg:12 }} justifyContent="flex-start">
                     {
-                        communitiesFetch.data.map((community: community) => {
+                        communitiesFetch.data.map((community) => {
                             return {id: community.id, name: community.name, imgUrl: community.imgUrl, avgPrice: GetAveragePrice(community.id, homesFetch.data)}
                         })
                         .sort(SortByName)
-                        .map(item => 
-                        <Community community={item} key={item.name}
-                        hidden={!item.name.toUpperCase().includes(searchKey.toUpperCase()) }
+                        .map(community => 
+                        <Community community={community} key={community.name}
+                        hidden={!community.name.toUpperCase().includes(searchKey.toUpperCase()) }
                         />
                         )
                     }

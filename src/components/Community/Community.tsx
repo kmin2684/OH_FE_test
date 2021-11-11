@@ -1,8 +1,7 @@
-import * as React from 'react';
+import React from 'react';
+import "./Community.css";
 import { useAppDispatch } from '../../store';
 import { dataActions } from '../../store/dataSlice';
-
-import "./Community.css";
 import FALLBACK_IMAGE from '../../assets/No_image_available.svg';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -56,12 +55,12 @@ export default function Community(props: propType) {
             {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {avgPrice === 'no homes for sale'? avgPrice 
+            {avgPrice === 'N/A'? ' no home data available' 
             : `Average price: ${avgPrice}`}
           </Typography>
         </CardContent>
           <CardActions>
-            <Button disabled = {avgPrice === 'no homes for sale'} size="small" onClick={onClick}>
+            <Button disabled = {avgPrice === 'N/A'} size="small" onClick={onClick}>
               view homes
             </Button>
           </CardActions>

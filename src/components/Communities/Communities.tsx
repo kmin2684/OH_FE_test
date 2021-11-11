@@ -14,6 +14,7 @@ export default function Communities() {
     const dispatch = useAppDispatch();
     const communitiesFetch = useGetCommunitiesQuery('');
     const homesFetch = useGetHomesQuery('');
+    const searchKey = useTypedSelector(state => state.data.searchKey);
 
     return (
         <div className="Communities">
@@ -34,12 +35,15 @@ export default function Communities() {
                             return {id: community.id, name: community.name, imgUrl: community.imgUrl, avgPrice: GetAveragePrice(community.id, homesFetch.data)}
                         })
                         .sort(SortByName)
-                        .map(item => <Community community={item} key={item.name}/>
+                        .map(item => 
+                        <Community community={item} key={item.name}
+                        hidden={!item.name.toUpperCase().includes(searchKey.toUpperCase()) }
+                        />
                         )
                     }
                 </Grid>
 
-                : 'no community data available'
+                : 'no community data is available'
                 }
             </Container>
         </div>

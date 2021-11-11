@@ -11,10 +11,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Skeleton, Grid } from '@mui/material';
-import {community} from '../../data_types/data_types'
+
 
 interface propType {
   community: {avgPrice: string, imgUrl: string, name: string, id: string}, 
+  hidden: boolean
 };
 
 export default function Community(props: propType) {
@@ -37,7 +38,7 @@ export default function Community(props: propType) {
 
 
   return (
-    <Grid item xs={12} sm={6} md={4} lg={3} >
+    <Grid item xs={12} sm={6} md={4} lg={3} style={ props.hidden?{display: 'none'} : {}}>
       <div className='Community'>
         <Card>
           {image.loading&& 

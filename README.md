@@ -1,14 +1,19 @@
+The live version is deployed at:
+https://kmin2684.github.io/oh_fe_test/
+
 ## Features
 
 Responsive layout
-Filter results by typing community name
+
+Filters results by typing community name
+
 Modal window for homes
 
-## If given more time, how would you improve the quality of your application? Would you implement anything differently? Please provide your comments in the README.
+Unit testing
 
-I wish I had implemented more comprehensive unit testing. Also, the modal window has fixed width, however if I had more time I would have tried to make the width to be adjusted based on the number of homes displayed.
+## If given more time, how would you improve the quality of your application? Would you implement anything differently?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+I wish I had implemented more comprehensive unit testing. Also, the modal window has fixed width, however if I had more time I would have tried to make the width adapt to the number of homes displayed.
 
 ## Available Scripts
 
@@ -52,3 +57,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.

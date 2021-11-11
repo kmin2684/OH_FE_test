@@ -6,6 +6,7 @@ import Spinner from '../Spinner/Spinner';
 import { useGetCommunitiesQuery,useGetHomesQuery } from '../../store/mainApi';
 import {useTypedSelector, useAppDispatch} from "../../store/index";
 import {GetAveragePrice, SortByName} from "../../utils/organize_data";
+import {community} from '../../data_types/data_types';
 
 
 export default function Communities() {
@@ -29,7 +30,7 @@ export default function Communities() {
 
                 <Grid container columns={{ xs: 12, sm: 12, md: 12, lg:12 }} justifyContent="flex-start">
                     {
-                        communitiesFetch.data.map((community: any) => {
+                        communitiesFetch.data.map((community: community) => {
                             return {name: community.name, imgUrl: community.imgUrl, avgPrice: GetAveragePrice(community.id, homesFetch.data)}
                         })
                         .sort(SortByName)
@@ -37,6 +38,7 @@ export default function Communities() {
                         )
                     }
                 </Grid>
+
                 : 'no community data available'
                 }
             </Container>

@@ -8,10 +8,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Skeleton, Grid } from '@mui/material';
+import {community} from '../../data_types/data_types'
 
 interface propType {
-  name?: string | undefined,
-  community?: any, 
+  community: {avgPrice: string, imgUrl: string, name: string}, 
 };
 
 export default function Community(props: propType) {

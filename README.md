@@ -1,3 +1,13 @@
+## Features
+
+Responsive layout
+Filter results by typing community name
+Modal window for homes
+
+## If given more time, how would you improve the quality of your application? Would you implement anything differently? Please provide your comments in the README.
+
+I wish I had implemented more comprehensive unit testing. Also, the modal window has fixed width, however if I had more time I would have tried to make the width to be adjusted based on the number of homes displayed.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts

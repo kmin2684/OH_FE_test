@@ -7,11 +7,11 @@ export const mainApi = createApi({
     getCommunities: builder.query<any[], string>({
       query: () => `communities.json`,
     }),
-    getHouses: builder.query({
+    getHomes: builder.query({
       query: () => 'homes.json',
     }),
   }),
 })
 
 // Export hooks for usage in functional components
-export const { useGetCommunitiesQuery,useGetHousesQuery } = mainApi
+export const { useGetCommunitiesQuery,useGetHomesQuery } = mainApi

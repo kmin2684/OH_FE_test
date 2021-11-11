@@ -1,0 +1,9 @@
+.Community {
+  width: 95%;
+  margin: 0 0 1rem 0;
+  /* height: 80%; */
+}
+
+.hidden-community {
+  display: none;
+}

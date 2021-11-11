@@ -1,0 +1,9 @@
+.Container .MuiContainer-root {
+  margin: 2rem 0 0 0;
+}
+
+.Container .MuiGrid-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}

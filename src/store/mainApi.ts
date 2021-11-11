@@ -5,11 +5,11 @@ export const mainApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://kmin2684.github.io/mock-api/oh_fe_test/' }),
   tagTypes: [],
   endpoints: (builder) => ({
-    getCommunities: builder.query<community[], string>({
-      query: (key) => `communities.json`,
+    getCommunities: builder.query({
+      query: (key: string) => `communities.json`,
     }),
-    getHomes: builder.query<home[], string>({
-      query: (key) => 'homes.json',
+    getHomes: builder.query({
+      query: (key: string) => 'homes.json',
     }),
   }),
 })
